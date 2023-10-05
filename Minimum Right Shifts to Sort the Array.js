@@ -3,7 +3,7 @@ function minimumRightShifts(nums){
     let sortNums = [...nums];
     //sort in ascending order
     sortNums.sort(function (a, b) {  return a - b;  });
-    //initialize answer
+    //initialize answer to zero
     let ans = 0;
     //check if it is already in ascending order
     if(JSON.stringify(sortNums) === JSON.stringify(nums)){
