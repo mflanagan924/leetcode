@@ -22,6 +22,6 @@ function minimumRightShifts(nums){
             return ans;
         } 
     }
-    //if there is no right shift that will equal the ascending order return -1
+    //if there is no right shift that will equal the ascending order return -1 meaning that there is nothing
     return -1;
 }
