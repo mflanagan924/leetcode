@@ -1,0 +1,37 @@
+function minimumPushes(word){
+  let arr = word.split("");
+  // Create an empty array to store item frequencies
+  let frequencyArray = [];
+
+  // Iterate through the array
+  arr.forEach(function (item) {
+    // Check if the item is already in the frequency array
+    let index = frequencyArray.findIndex(entry => entry[0] === item);
+
+    if (index === -1) {
+      // If the item is not in the frequency array, add it with count 1
+      frequencyArray.push([item, 1]);
+    } else {
+      // If the item is already in the frequency array, increment its count
+      frequencyArray[index][1]++;
+    }
+  });
+
+  // Return the frequency array
+  frequencyArray.sort(function (a, b) {  return b[1] - a[1];  });
+  let count = 0;
+  for (let i = 0; i < frequencyArray.length; i++){
+      if (i < 8){
+          count += frequencyArray[i][1];
+      } else if (i < 16){
+          count += frequencyArray[i][1] * 2;
+      } else if (i < 24){
+          count += frequencyArray[i][1] * 3;
+      } else {
+          count += frequencyArray[i][1] * 4;
+      }
+  }
+  return count;
+  
+}
+
